@@ -1,11 +1,12 @@
-type Matrix3X3 = [
+export type Blockshape = [
   [number, number, number],
   [number, number, number],
-  [number, number, number]
+  [number, number, number],
 ];
 
-interface shapeObject {
-  shape: Matrix3X3;
+export interface shapeObject {
+  shape: Blockshape;
+  color ?: string,
 }
 
 export const shapes: shapeObject[] = [
@@ -80,3 +81,23 @@ export const shapes: shapeObject[] = [
     ],
   },
 ];
+
+export function getRandomColor() {
+  const brightColors = [
+    "red",
+    "green",
+    "blue",
+    "orange",
+    "purple",
+    "pink",
+    "cyan",
+    "lime",
+    "yellow",
+    "magenta",
+    "turquoise",
+    "gold",
+    "hotpink",
+    "deepskyblue",
+  ];
+  return brightColors[Math.floor(Math.random() * brightColors.length)];
+}
