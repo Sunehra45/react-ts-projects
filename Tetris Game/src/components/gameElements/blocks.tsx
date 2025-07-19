@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback, useEffect } from "react";
 import { shapes, getRandomColor } from "./shapesinfo";
 import type { shapeObject } from "./shapesinfo";
-import '../../App.css'
+import "../../App.css";
 
 interface Position {
   xPosition: number;
@@ -68,7 +68,11 @@ const Blocks: React.FC = () => {
     });
   }, []);
 
-  const handleMouseUp = (): void => {
+  const handleMouseUp = (event: MouseEvent) => {
+    const element = event.target as HTMLElement;
+    if (element.closest("#game-area")) {
+      console.log("shape is in game area....");
+    }
     dragInfo.current = {
       index: null,
       offsetX: 0,
@@ -88,7 +92,6 @@ const Blocks: React.FC = () => {
   return (
     <>
       {activeShapesref.current.map((shape, index) => {
-       console.log("hey this is working")
         return (
           <div
             key={index}

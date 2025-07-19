@@ -4,7 +4,7 @@ function Gamearea() {
 
   return (
     <>
-      <div className='bg-purple-600 p-2 w-fit rounded m-auto mt-6'>
+      <div className='bg-purple-600 p-2 w-fit rounded m-auto mt-6' id="game-area">
         {Array.from({ length: rows }).map((_, rowIndex) => {
           return (
             <div key={rowIndex} className='flex'>
@@ -12,6 +12,7 @@ function Gamearea() {
                 return (
                   <div
                     key={colIndex}
+                    defaultValue={0}
                     className='w-14 h-14 border border-white/30'></div>
                 );
               })}
