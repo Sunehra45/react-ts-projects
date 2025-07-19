@@ -3,7 +3,6 @@ import { shapes, getRandomColor } from "./shapesinfo";
 import type { shapeObject } from "./shapesinfo";
 import '../../App.css'
 
-
 interface Position {
   xPosition: number;
   yPosition: number;
@@ -108,7 +107,7 @@ const Blocks: React.FC = () => {
                   cell === 0 ? null : (
                     <div
                       key={cellIndex}
-                      className='w-12 h-12 border-2 border-black'
+                      className='w-14 h-14 border-2 border-black'
                       style={{ backgroundColor: shape.color }}
                     />
                   )
